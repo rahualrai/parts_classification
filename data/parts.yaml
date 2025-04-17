@@ -1,0 +1,4 @@
+train: data/parts
+val:  data/parts
+nc:   5
+names: ['spring','gear','shaft','plate','connector']
