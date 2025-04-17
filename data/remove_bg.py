@@ -42,6 +42,6 @@ def process_all_folders(input_dir, output_dir):
                 output_image.save(output_path)
 
 if __name__ == "__main__":
-    input_dir = "data/parts_with_bg"
+    input_dir = "data/new_split_parts"
     output_dir = "data/parts"
     process_all_folders(input_dir, output_dir)

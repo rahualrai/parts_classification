@@ -28,6 +28,6 @@ def split_dataset(base_dir, output_dir, test_size=0.2):
             print(f"Class '{class_name}' split into {len(train_images)} train and {len(test_images)} test images.")
 
 if __name__ == "__main__":
-    base_dir = "data/parts"
-    output_dir = "data/split_parts"
+    base_dir = "data/parts_presplit"
+    output_dir = "data/new_split_parts"
     split_dataset(base_dir, output_dir, test_size=0.2)
