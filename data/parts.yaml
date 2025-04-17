@@ -1,4 +1,6 @@
-train: data/parts
-val:  data/parts
-nc:   5
-names: ['spring','gear','shaft','plate','connector']
+# data/parts.yaml
+path: data/parts                # ← your base dir, relative to project root
+train: train
+val:   test
+test:  test
+names: [spring, gear, shaft, plate, connector]
