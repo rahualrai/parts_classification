@@ -5,7 +5,7 @@ from ultralytics import YOLO
 model = YOLO("yolo11n-cls-trained-synth.pt")
 
 # Path to the validation folder
-val_folder = "/Users/rahual/Documents/parts_classification/val"
+val_folder = "eval_data/val_no_bg"
 
 # Get all image paths in the validation folder
 image_paths = [
