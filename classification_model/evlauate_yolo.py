@@ -1,21 +1,24 @@
 import os
 from ultralytics import YOLO
 
-# Load the trained YOLO model
 model = YOLO("yolo11n-cls-trained-synth.pt")
 
-# Path to the validation folder
+class_names = model.names
+
 val_folder = "eval_data/val_no_bg"
 
-# Get all image paths in the validation folder
 image_paths = [
-    os.path.join(val_folder, image_name)
-    for image_name in os.listdir(val_folder)
-    if os.path.isfile(os.path.join(val_folder, image_name)) and image_name.lower().endswith(('.jpg', '.jpeg', '.png'))
+    os.path.join(val_folder, fname)
+    for fname in os.listdir(val_folder)
+    if fname.lower().endswith(('.jpg', '.jpeg', '.png')) and os.path.isfile(os.path.join(val_folder, fname))
 ]
 
-# Predict on each image and print the results
 for image_path in image_paths:
     results = model(image_path)
-    prediction = results[0].probs.top1 if results[0].probs is not None else "No prediction"
-    print(f"{os.path.basename(image_path)}: {prediction}")
+    res = results[0]
+    if res.probs is not None:
+        class_id = int(res.probs.top1)
+        class_name = class_names[class_id]
+    else:
+        class_name = "No prediction"
+    print(f"{os.path.basename(image_path)}: {class_name}")
