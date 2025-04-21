@@ -1,7 +1,7 @@
 import os
 from ultralytics import YOLO
 
-model = YOLO("yolo11n-cls-trained-synth.pt")
+model = YOLO("yolo11n-cls-trained-synth_v2.pt")
 
 class_names = model.names
 

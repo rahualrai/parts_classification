@@ -173,3 +173,19 @@ poetry.toml
 pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python
+
+
+# Ignore all image files
+*.jpg
+*.jpeg
+*.png
+
+# Exclude specific directories from ignoring images (if needed)
+!eval_data/val_no_bg/*.jpg
+!eval_data/val_no_bg/*.jpeg
+!eval_data/val_no_bg/*.png
+
+# Ignore image files in all subdirectories
+**/*.jpg
+**/*.jpeg
+**/*.png
