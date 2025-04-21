@@ -189,3 +189,7 @@ pyrightconfig.json
 **/*.jpg
 **/*.jpeg
 **/*.png
+
+# Do not ignore anything in the runs folder
+!runs/
+!runs/**
